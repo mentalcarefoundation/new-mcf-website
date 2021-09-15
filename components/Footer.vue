@@ -12,8 +12,40 @@
                 Phone:<span>{{}}</span>
             </div>
         </div>
-        <div></div>
-        <div></div>
+        <div class="column col-2">
+            <div class="footer-links">
+                <NuxtLink to="/about" class="footer-link">About Us</NuxtLink>
+                <NuxtLink :to="{ path: '/about',hash:'#vision'}" class="footer-link">Our Vision</NuxtLink>
+                <NuxtLink :to="{ path: '/about',hash:'#mission'}" class="footer-link">Our Mission</NuxtLink>
+                <NuxtLink :to="{ path: '/about',hash:'#team'}" class="footer-link">Meet The Team</NuxtLink>
+            </div>
+        </div>
+        <div class="column socials col-2">
+            <div class="social-group">
+                <div class="icon">
+                    <img src="~/assets/img/twitter.svg"/>
+                </div>
+                <p>Twitter: {{}}</p>
+            </div>
+            <div class="social-group">
+                <div class="icon">
+                    <img src="~/assets/img/facebook.svg"/>
+                </div>
+                <p>Facebook: {{}}</p>
+            </div>
+            <div class="social-group">
+                <div class="icon">
+                    <img src="~/assets/img/instagram.svg"/>
+                </div>
+                <p>Instagram: {{}}</p>
+            </div>
+            <div class="social-group">
+                <div class="icon">
+                    <img src="~/assets/img/linkedin.svg"/>
+                </div>
+                <p>LinkedIn: {{}}</p>
+            </div>
+        </div>
       </div>
       <div class="last-section">
             <div class="terms">
@@ -49,6 +81,14 @@ footer {
     color: var(--color-white);
     font-family: Verdana, sans-serif;
 }
+a {
+    color: var(--color-white);
+    font-family: Verdana, sans-serif;
+    width: fit-content;
+}
+a:hover {
+    color: var(--color-pink-light);
+}
 .column-box {
     display: flex;
     align-items: center;
@@ -57,11 +97,32 @@ footer {
 .column {
     width: 33.33%;
 }
+.col-2 {
+    margin-top: 50px;
+}
 .logo-box {
     margin: 0 0 -25px -25px;
 }
 .logo-box img {
     object-fit: cover;
+}
+.footer-links, .socials {
+    display: flex;
+    flex-direction: column;
+}
+.footer-link {
+    margin-bottom: 16px;
+}
+.social-group {
+    display: flex;
+    margin-bottom: 16px;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    border: 1px solid transparent;
+    border-radius: 50%;
 }
 .last-section {
     margin: 45px 0;
@@ -70,13 +131,11 @@ footer {
 .terms {
     margin-bottom: 13px;
 }
-.terms a {
-    color: var(--color-white);
-}
 p {
     color: var(--color-white);
     line-height: 26px;
     font-size: var(--text-16);
+    font-family: Verdana, sans-serif;
 }
 .text {
     font-family: Verdana, sans-serif;
@@ -97,11 +156,30 @@ p {
     footer {
         padding: 70px 5% 45px;
     }
+    .logo-box {
+        width: 80%;
+    }
 }
 
 @media (max-width:768px) {
     footer {
-        padding: 40px 15px;
+        padding: 40px 30px;
+    }
+    .logo-box {
+        margin:0 0 -20px -20px;
+        max-width: 30%;
+    }
+    .column-box {
+        display: block;
+    }
+    .column {
+        width: 100%;
+    }
+    .last-section {
+        text-align: left;
+    }
+    .bg-img {
+        display: none;
     }
 }
 

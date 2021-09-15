@@ -103,6 +103,7 @@ nav {
     width: 150px;
     height: auto;
     margin-right: 100px;
+    margin-left: -15px;
 }
 .logo-wrapper img {
     max-width: 100%;
@@ -208,7 +209,7 @@ nav {
 
 @media (max-width:768px) {
     nav {
-        padding: 10px 15px;
+        padding: 10px 30px;
     }
     .nav-items {      
         position: fixed;
