@@ -1,0 +1,50 @@
+/* CUSTOM STYLESHEET */  
+
+/*global settings*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+:root {
+	--color-blue-dark: #06346F;
+	--color-blue-light: #7CB2F8;
+	--color-blue-100: rgba(124, 178, 248, 0.08);
+	--color-black-primary: #2F2C2C;
+	--color-black-secondary: #4A5360; 
+	--color-grey: #A7B5C9; 
+	--color-white: #ffffff; 
+	--color-pink-dark: #D10069; 
+	--color-pink-light: #FF69B4; 
+    --color-pink-100: rgba(255, 105, 180, 0.1); 
+  
+    --text-16: 16px;
+    --text-18: 18px;
+    --text-20: 20px;
+    --text-24: 24px;
+    --text-36: 36px;
+    --text-48: 48px;
+}
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: var(--text-16);
+    background: var(--color-white);
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    line-height: 26px;
+  }
+  
+h1, h2, h3,h4,h5,h6 {
+    font-family: Arial, sans-serif;
+}
+a, p {
+    font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+@media (max-width:768px) {
+  
+}
