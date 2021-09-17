@@ -5,13 +5,13 @@
                 <slot name="heading"></slot>
             </h1>
             <h3 v-if="subHeading" class="sub-heading">lend your voice</h3>
-            <div class="description" :style="{fontSize: textSize}">
+            <div class="description page-desc">
                 <slot name="content"></slot>
             </div>
             <slot></slot>
         </div>
         <div class="round-img-box">
-            <!-- <img :src="headerImgUrl" alt="header-img" /> -->
+            <img :src="headerImgUrl" alt="header-img" />
         </div>
     </section>
 </template>
@@ -24,10 +24,10 @@ export default {
             default: '16px'
         },
         subHeading: Boolean,
-        textSize: {
+        headerImgUrl: {
             type: String,
-            default:  '18px'
-        },
+            default: "~/assets/img/logo.svg"
+        }
     }
 }
 </script>
@@ -36,7 +36,7 @@ export default {
 section {
     display: flex;
     align-items: flex-start;
-    padding: 120px 0;
+    padding-bottom: 120px;
 }
 p {
     font-family: Verdana, sans-serif;
@@ -60,32 +60,43 @@ p {
     color: var(--color-blue-dark);
     margin-bottom: 16px;
 }
-.description {
-    font-size: var(--text-18);
-    color: var(--color-black-secondary);
-    line-height: 38px;
-    max-width: 70%;
+.page-desc {
+   width: 70%;
 }
 .sub-desc {
     margin-top: 20px;
 }
 .round-img-box {
-    width: 40%;
+    max-width: 480px;
+    max-height: 480px;
+    width: 40vw;
+    height: 40vw;
     border: 1px solid transparent;
     border-radius: 50%;
 }
 .round-img-box img {
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 1200px) {
+    .page-desc {
+        width: 100%;
+    }
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 840px) {
     section {
         display: block;
+        padding-bottom: 50px;
     }
     .content {
         width: 100%;
     }
     .heading {
-        font-size: var(--text-28);
+        font-size: 32px;
     }
     .sub-heading {
         font-size: var(--text-18);

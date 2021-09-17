@@ -207,7 +207,7 @@ nav {
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:840px) {
     nav {
         padding: 10px 30px;
     }
@@ -223,6 +223,7 @@ nav {
         background-color: var(--color-blue-dark);
         transform: translateX(110%);
         transition: all 1s ease;
+        z-index: 99;
     }
     .nav-link, .dropdown-wrapper {
         font-size: var(--text-16);

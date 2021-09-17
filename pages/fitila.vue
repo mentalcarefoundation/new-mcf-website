@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-header heading-text-bottom="8px" text-size="24px">
+    <page-header heading-text-bottom="8px">
       <template #heading>Introducing Fitila</template>
       <template #content>
         <p>Nigeria’s premier on-demand emotional support platform.</p>

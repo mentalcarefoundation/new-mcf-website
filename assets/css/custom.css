@@ -49,7 +49,42 @@ a {
 img {
   object-fit: cover;
 }
+.page {
+  padding: 120px 0;
+}
+.wrapper {
+  margin: 0 95px;
+}
+.section-header {
+  font-family: Arial, sans-serif;
+  font-size: var(--text-48);
+  font-weight: 700;
+  line-height: 55px;
+  color: var(--color-black-primary);
+}
+.colored {
+  color: var(--color-blue-dark);
+}
+.description {
+  font-size: var(--text-24);
+  color: var(--color-black-secondary);
+  line-height: 38px;
+}
 
-@media (max-width:768px) {
-  
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+  .description {
+      font-size: var(--text-18);
+  }
+}
+
+@media (max-width:840px) {
+  .page {
+    padding: 50px 0;
+  }
+  .wrapper {
+    margin: 0 15px;
+  }
 }

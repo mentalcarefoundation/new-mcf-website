@@ -6,10 +6,10 @@
                 <img src='~/assets/img/logo-footer.svg' />
             </div>
             <div class="text">
-                Email us:<span>{{}}</span>
+                Email us:<span>{{result.email}}</span>
             </div>
             <div class="text">
-                Phone:<span>{{}}</span>
+                Phone:<span>{{result.phone}}</span>
             </div>
         </div>
         <div class="column col-2">
@@ -25,25 +25,25 @@
                 <div class="icon">
                     <img src="~/assets/img/twitter.svg"/>
                 </div>
-                <p>Twitter: {{}}</p>
+                <p>Twitter: {{result.twitter}}</p>
             </div>
             <div class="social-group">
                 <div class="icon">
                     <img src="~/assets/img/facebook.svg"/>
                 </div>
-                <p>Facebook: {{}}</p>
+                <p>Facebook: {{result.facebook}}</p>
             </div>
             <div class="social-group">
                 <div class="icon">
                     <img src="~/assets/img/instagram.svg"/>
                 </div>
-                <p>Instagram: {{}}</p>
+                <p>Instagram: {{result.instagram}}</p>
             </div>
             <div class="social-group">
                 <div class="icon">
                     <img src="~/assets/img/linkedin.svg"/>
                 </div>
-                <p>LinkedIn: {{}}</p>
+                <p>LinkedIn: {{result.linkedin}}</p>
             </div>
         </div>
       </div>
@@ -58,16 +58,26 @@
 </template>
 
 <script>
+import {createClient} from '~/plugins/contentful.js'
+
+const client = createClient()
+
 export default {
     data() {
         return{
-            year: ""
+            year: "",
+            result: {}
         }
+    },
+    async fetch () {
+        this.result = await client.getEntry(process.env.CTF_FOOTER)
+        .then(entry => entry.fields)
     },
     mounted() {
         const date = new Date();
         this.year = date.toLocaleDateString('en', {year: 'numeric'})
-    }
+        
+    },
 }
 </script>
 
@@ -92,10 +102,8 @@ a:hover {
 .column-box {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 87px;
-}
-.column {
-    width: 33.33%;
 }
 .col-2 {
     margin-top: 50px;
@@ -161,7 +169,7 @@ p {
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:840px) {
     footer {
         padding: 40px 30px;
     }
