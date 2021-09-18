@@ -252,7 +252,7 @@ export default {
   }
   .volunteer-box {
     width: 80vw;
-    padding-right: 5vw;
+    padding-right: 10vw;
   }
   .volunteer-details h4 {
     font-size: var(--text-18);
@@ -269,7 +269,7 @@ export default {
     padding-top: 0;
   }
   .last-section button {
-    margin-top: 20px;
+    margin: 20px 0;
   }
 }
 </style>

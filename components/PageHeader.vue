@@ -5,7 +5,7 @@
                 <slot name="heading"></slot>
             </h1>
             <h3 v-if="subHeading" class="sub-heading">lend your voice</h3>
-            <div class="description page-desc">
+            <div class="description page-desc sub-page">
                 <slot name="content"></slot>
             </div>
             <slot></slot>
@@ -57,6 +57,10 @@ p {
 .page-desc {
    width: 70%;
 }
+.sub-page p {
+    font-size: var(--text-18);
+    line-height: var(--text-28);
+}
 .sub-desc {
     margin-top: 20px;
 }
@@ -76,7 +80,7 @@ p {
 
 @media (max-width: 1200px) {
     .page-desc {
-        width: 100%;
+        width: 85%;
     }
 }
 @media (max-width: 1024px) {
@@ -85,6 +89,9 @@ p {
     }
 }
 @media (max-width: 840px) {
+    .page-desc {
+        width: 100%;
+    }
     section {
         display: block;
         padding-bottom: 50px;
