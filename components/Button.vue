@@ -19,8 +19,8 @@
         transition: all .2s ease-in;
     }
     button:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(122, 122, 122, 0.2);
     }
     a {
         font-family: 'Arial', sans-serif;
@@ -30,5 +30,15 @@
         color: var(--color-white);
         width: 100%;
         text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
+@media (max-width: 425px) {
+  button {
+    width: 100%;
+  }
+  a {
+    font-size: var(--text-14);
+    line-height: var(--text-18);
+  }
+}
 </style>

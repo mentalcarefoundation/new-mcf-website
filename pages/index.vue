@@ -14,7 +14,7 @@
       </div>    
     </page-header>
     <section class="first-section wrapper">
-      <h2 class="section-header">Our Solutions</h2>
+      <h2 class="heading section-header">Our Solutions</h2>
       <div class="description">
         We are intrepidly putting a stop to the stigma. At Mental Care Foundation, we hold the opinion
          that everyone has a role to play to change the narrative of mental health in Nigeria. <br>Together, 
@@ -35,7 +35,7 @@
     </section>
     <section class="second-section">
       <div class="wrapper">
-        <h2 class="section-header colored">Introducing Fitila</h2>
+        <h2 class="heading section-header colored">Introducing Fitila</h2>
         <h3 class="sub-head">A listening ear to your deepest troubles</h3>
         <div class="description content">
           Fitila connects you with anonymous listeners who truly understand and are ready to give free 
@@ -55,7 +55,30 @@
         </btn>
       </div>
     </section>
+    <section class="third-section wrapper">
+      <h2 class="heading section-header">Volunteers of the Month</h2>
+      <div class="volunteer-group">
+        <div class="volunteer-container">
+          <div v-for="volunteer in volunteers" :key="volunteer.fields.volunteerId" class="volunteer-box">
+            <div class="volunteer-img-box">
+              <img :src="volunteer.fields.image.fields.file.url" alt="volunteer-img">
+            </div>  
+            <div class="volunteer-details">
+              <h4>{{volunteer.fields.name}}</h4>
+              <p class="job">{{volunteer.fields.job}}</p>
+              <div class="bio">"{{volunteer.fields.bio}}"</div>
+            </div>   
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="last-section wrapper">
+      <h2 class="heading section-header">Help Us Do More</h2>
+      <btn>
+        <NuxtLink to="/donate">Learn how</NuxtLink>
+      </btn>
+    </section>
   </div>
 </template>
 
@@ -71,14 +94,18 @@ export default {
     PageHeader,
     Btn
   },
-  
-  asyncData ({env}) {
-    return client.getEntry('4Xo2L7568c7fgij7OaSfLO')
-      .then(entry => {
-          return {
-            url: entry.fields.headerImage.fields.file.url
-          }
+  asyncData () {
+      return Promise.all([
+        client.getEntry('4Xo2L7568c7fgij7OaSfLO'),
+        client.getEntries({
+          'content_type': 'volunteer'
         })
+      ]).then(([entry, volunteers]) => {
+        return {
+          url: entry.fields.headerImage.fields.file.url,
+          volunteers: volunteers.items
+        }
+      })
     },
   head: {
     title: 'Home'
@@ -106,18 +133,143 @@ export default {
   padding: 60px 0;
   background-color: var(--color-blue-100);
 }
+.second-section .section-header, .third-section .section-header {
+  margin-bottom: 40px;
+}
 .second-section ul {
   margin-left: 25px;
 }
 .second-section li {
   list-style-type: disc;
 }
-.sub-head {
-  color: var(--color-black-primary);
-  font-size: var(--text-36);
-  margin: 40px 0;
-}
 .content {
   margin-bottom: 40px;
+}
+.third-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.volunteer-group {
+    overflow: hidden;
+}
+.volunteer-container {
+    display: flex;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+}
+.volunteer-container::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+.volunteer-box {
+  width: 655px;
+  padding-right: 200px;
+  display: flex;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  z-index: 10;
+}
+.volunteer-box:last-child {
+  padding-right: 0
+}
+.volunteer-img-box {
+  margin-right: 40px;
+  border-radius: 50%;
+}
+.volunteer-img-box img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+.volunteer-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.volunteer-details h4 {
+  font-size: var(--text-24);
+  line-height: 39px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: var(--color-blue-dark);
+}
+.volunteer-details .job {
+  font-size: var(--text-18);
+  line-height: 29px;
+  font-family: Verdana, sans-serif;
+  color: var(--color-black-secondary);
+  margin-bottom: var(--text-16);
+}
+.volunteer-details .bio {
+  font-size: var(--text-24);
+  line-height: 29px;
+  font-family: Verdana, sans-serif;
+  color: var(--color-black-primary);
+  text-overflow: ellipsis;
+  overflow: hidden;    
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 58px;
+}
+.last-section {
+  padding-top: 60px;
+}
+.last-section button {
+  margin-top: 40px;
+}
+@media (max-width: 1200px) {
+  .volunteer-box {
+    padding-right: 100px;
+  }
+}
+@media (max-width: 1024px) {
+  .btn-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-group button {
+    margin-bottom: 30px;
+  }
+  .content {
+    margin-bottom: 20px;
+  }
+  .volunteer-box {
+    width: 70vw;
+    padding-right: 5vw;
+  }
+}
+@media (max-width: 840px) {
+  .volunteer-img-box {
+    margin-right: 20px;
+  }
+  .volunteer-img-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .volunteer-box {
+    width: 80vw;
+    padding-right: 5vw;
+  }
+  .volunteer-details h4 {
+    font-size: var(--text-18);
+  }
+  .volunteer-details .job {
+    font-size: var(--text-14);
+    margin-bottom: 0;
+  }
+  .volunteer-details .bio {
+    font-size: var(--text-14);
+    font-weight: 700;
+  }
+  .last-section {
+    padding-top: 0;
+  }
+  .last-section button {
+    margin-top: 20px;
+  }
 }
 </style>

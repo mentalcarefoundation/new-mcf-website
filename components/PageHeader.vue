@@ -44,12 +44,6 @@ p {
 .content {
     width: 60%;
 }
-.heading {
-    color: var(--color-black-primary);
-    font-size: var(--text-48);
-    margin-bottom: var(--text-16);
-    line-height: 56px;
-}
 .heading span {
     color: var(--color-pink-dark);
 }
@@ -86,6 +80,9 @@ p {
     }
 }
 @media (max-width: 1024px) {
+    .sub-desc {
+        margin-top: 10px;
+    }
 }
 @media (max-width: 840px) {
     section {
@@ -95,14 +92,8 @@ p {
     .content {
         width: 100%;
     }
-    .heading {
-        font-size: 32px;
-    }
     .sub-heading {
         font-size: var(--text-18);
-    }
-    .description {
-        font-size: var(--text-14);
     }
     .round-img-box {
         display: none;

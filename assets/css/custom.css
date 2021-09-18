@@ -1,11 +1,9 @@
 /* CUSTOM STYLESHEET */  
-
-/*global settings*/
-* {
+* { 
   margin: 0;
   padding: 0;
-  list-style: none;
 }
+/*global settings*/
 :root {
 	--color-blue-dark: #06346F;
 	--color-blue-light: #7CB2F8;
@@ -36,7 +34,9 @@ body {
     box-sizing: border-box;
     line-height: 26px;
   }
-  
+li {
+  list-style: none;
+} 
 h1, h2, h3,h4,h5,h6 {
     font-family: Arial, sans-serif;
 }
@@ -59,8 +59,19 @@ img {
   font-family: Arial, sans-serif;
   font-size: var(--text-48);
   font-weight: 700;
-  line-height: 55px;
   color: var(--color-black-primary);
+}
+.heading {
+  color: var(--color-black-primary);
+  font-size: var(--text-48);
+  margin-bottom: var(--text-16);
+  line-height: 55px;
+}
+.sub-head {
+  color: var(--color-black-primary);
+  font-size: var(--text-36);
+  margin: 40px 0;
+  line-height: var(--text-28);
 }
 .colored {
   color: var(--color-blue-dark);
@@ -72,6 +83,9 @@ img {
 }
 
 @media (max-width: 1200px) {
+  .wrapper {
+    margin: 0 5%;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -85,6 +99,15 @@ img {
     padding: 50px 0;
   }
   .wrapper {
-    margin: 0 15px;
+    margin: 0 30px;
+  }
+  .heading {
+      font-size: 32px;
+  }
+  .sub-head {
+    font-size: var(--text-24);
+  }
+  .description {
+      font-size: var(--text-14);
   }
 }
