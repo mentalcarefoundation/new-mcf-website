@@ -14,12 +14,18 @@
       <div class="">
       </div>
     </section>
+    <section class="last-section wrapper">
+      <h2 class="heading section-header">Want to Organize an Event?</h2>
+      <btn>
+        <a href="https://bit.ly/2SM2aGD">create one</a>
+      </btn>
+    </section>
   </div>
 </template>
  
 <script>
 import PageHeader from '~/components/PageHeader.vue'
-// import Btn from '~/components/Button.vue'
+import Btn from '~/components/Button.vue'
 import {createClient} from '~/plugins/contentful.js'
 
 const client = createClient()
@@ -27,7 +33,7 @@ const client = createClient()
 export default {
   components: {
     PageHeader,
-    // Btn
+    Btn
   },
   asyncData () {
       return client.getEntry('2oru5DrMOUPdJfYxBbm269')
@@ -47,11 +53,26 @@ export default {
 .event-section {
   margin-top: 120px;
 }
+
+.last-section {
+  padding-top: 60px;
+}
+.last-section button {
+  margin-top: 40px;
+}
 @media (max-width: 1024px) {
   .event-section {
     margin-top: 60px;
   }
 }
 @media (max-width: 840px) {
+
+  
+  .last-section {
+    padding-top: 0;
+  }
+  .last-section button {
+    margin: 20px 0;
+  }
 }
 </style>
