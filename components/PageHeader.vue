@@ -11,7 +11,7 @@
             <slot></slot>
         </div>
         <div class="round-img-box">
-            <img :src="headerImgUrl" alt="header-img" />
+            <img :src="headerImgUrl" alt="header-img" >
         </div>
     </section>
 </template>

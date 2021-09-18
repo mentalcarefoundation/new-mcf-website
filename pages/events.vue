@@ -9,9 +9,20 @@
              spreading relevant information and building a stigma-free society.</p>
       </template>
     </page-header>
-    <section class="event-section wrapper">
+    <section class="wrapper">
       <h2 class="heading section-header">Our Events</h2>
-      <div class="">
+      <div class="events-box">
+        <div v-for="event in events" :key="event.fields.id" class="event-group">
+          <div class="img-box">
+            <img :src="event.fields.banner.fields.file.url" alt="event-image">
+          </div>
+          <div class="content">
+            <h4 class="title">{{event.fields.title}}</h4>
+            <btn>
+              <a :href="event.fields.link">register</a>
+            </btn>
+          </div>
+        </div>
       </div>
     </section>
     <section class="last-section wrapper">
@@ -36,13 +47,26 @@ export default {
     Btn
   },
   asyncData () {
-      return client.getEntry('2oru5DrMOUPdJfYxBbm269')
-        .then((entry) => {
+      return Promise.all([
+        client.getEntry('2oru5DrMOUPdJfYxBbm269'),
+        client.getEntries({
+          'content_type': 'event'
+        })
+      ]).then(([entry, events]) => {
         return {
-          url: entry.fields.headerImage.fields.file.url
+          url: entry.fields.headerImage.fields.file.url,
+          events: events.items
         }
       })
     },
+  // asyncData () {
+  //     return client.getEntry('2oru5DrMOUPdJfYxBbm269')
+  //       .then((entry) => {
+  //       return {
+  //         url: entry.fields.headerImage.fields.file.url
+  //       }
+  //     })
+  //   },
   head: {
     title: 'Events'
   },
@@ -50,24 +74,75 @@ export default {
 </script>
 
 <style scoped>
-.event-section {
-  margin-top: 120px;
+.events-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px -10px 0;
 }
+.event-group {
+  width: 30%;
+  max-width: 380px;
+  margin: 0 10px 80px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+.img-box {
+  width: 100%;
+  height: 340px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom: 1px solid var(--color-grey);
+}
+.img-box img {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  padding: 20px 40px;
+}
+.content .title {
+  font-family: Arial, sans-serif;
+  font-size: var(--text-16);
+  font-weight: 400;
+  line-height: var(--text-18);
+  color: var(--color-black-primary);
+  margin-bottom: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 39px;
 
+}
+.content button {
+  width: 100%;
+}
 .last-section {
   padding-top: 60px;
 }
 .last-section button {
   margin-top: 40px;
 }
-@media (max-width: 1024px) {
-  .event-section {
-    margin-top: 60px;
+@media (max-width: 1200px) {
+  .events-box {
+    justify-content: space-between;
+  }
+  .event-group {
+    width: 47%;
+    max-width: none;
+  }
+  .img-box {
+    height: 400px;
   }
 }
-@media (max-width: 840px) {
-
+@media (max-width: 1024px) {
   
+}
+@media (max-width: 840px) {
+  .event-group {
+    width: 100%;
+  }
   .last-section {
     padding-top: 0;
   }

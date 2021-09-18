@@ -57,8 +57,8 @@
     </section>
     <section class="third-section wrapper">
       <h2 class="heading section-header">Volunteers of the Month</h2>
-      <div class="volunteer-group">
-        <div class="volunteer-container">
+      <div class="scroll-group">
+        <div class="scroll-container">
           <div v-for="volunteer in volunteers" :key="volunteer.fields.volunteerId" class="volunteer-box">
             <div class="volunteer-img-box">
               <img :src="volunteer.fields.image.fields.file.url" alt="volunteer-img">
@@ -149,19 +149,6 @@ export default {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-.volunteer-group {
-    overflow: hidden;
-}
-.volunteer-container {
-    display: flex;
-    scroll-snap-type: x proximity;
-    scroll-behavior: smooth;
-    overflow-x: auto;
-}
-.volunteer-container::-webkit-scrollbar {
-    width: 10px;
-    height: 5px;
-  }
 .volunteer-box {
   width: 655px;
   padding-right: 200px;

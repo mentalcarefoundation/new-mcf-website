@@ -81,7 +81,19 @@ img {
   color: var(--color-black-secondary);
   line-height: 38px;
 }
-
+.scroll-group {
+  overflow: hidden;
+}
+.scroll-container {
+  display: flex;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+}
+.scroll-container::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
 @media (max-width: 1200px) {
   .wrapper {
     margin: 0 5%;
