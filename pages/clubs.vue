@@ -56,14 +56,6 @@ export default {
     PageHeader,
     Btn
   },
-  // asyncData () {
-  //     return client.getEntry('24ja3DvYPxsse8kHytGXmY')
-  //     .then((entry) => {
-  //       return {
-  //         url: entry.fields.headerImage.fields.file.url
-  //       }
-  //     })
-  //   },
   asyncData ({$axios}) {
       return Promise.all([
         $axios.$get('https://mcfapi.herokuapp.com/api/v1/admin/list?type=campus_club'),
@@ -81,10 +73,6 @@ export default {
     selectedOption: null,
     clubUrl: ""
   }),
-  // async fetch({$axios}) {
-  //   this.clubs = await $axios.$get('https://mcfapi.herokuapp.com/api/v1/admin/list?type=campus_club')
-  //   // this.clubs = results.data
-  // },
   head: {
     title: 'Campus Clubs'
   },
