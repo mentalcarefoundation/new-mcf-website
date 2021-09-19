@@ -102,6 +102,9 @@ p {
     .sub-heading {
         font-size: var(--text-18);
     }
+    .sub-page p {
+        font-size: var(--text-14);
+    }
     .round-img-box {
         display: none;
     }

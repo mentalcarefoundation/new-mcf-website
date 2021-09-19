@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <page-header  class="wrapper" :header-img-url="url">
+    <page-header class="wrapper" :header-img-url="url">
       <template #heading>Awareness Events</template>
       <template #content>
         <p>We organize mental health national events by partnering with individuals, private organizations, 

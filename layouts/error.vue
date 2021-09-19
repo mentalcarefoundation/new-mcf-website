@@ -1,21 +1,39 @@
 <template>
-<div class="main-container">
-            <section class="custom-bg text-center">
-                <div class="container custom-pos">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <!-- <img src="~/assets/img/404-error.svg" style="max-width: 20%"> -->
-                            <p class="lead">
-                                OOPS! Looks like the page you're looking for doesn't exist.
-                            </p>
-                            <NuxtLink class="btn btn--xs btn--primary type--uppercase" to="/">
-                                <span class="btn__text">Go to Home</span>
-                            </NuxtLink>
-                        </div>
-                    </div>
-                    <!--end of row-->
-                </div>
-                <!--end of container-->
-            </section>
-        </div>
+  <div class="page">
+    <div class=" centre wrapper">
+      <div>
+        <img src="~/assets/img/404.svg" style="max-width: 20%" />
+      </div>
+      <p class="description">
+        <strong>OOPS!</strong> Looks like the page you're looking for doesn't exist.
+      </p>
+      <btn>
+          <NuxtLink to="/">Go to home</NuxtLink>
+      </btn>
+    </div>
+  </div>
 </template>
+
+<script>
+import Btn from '~/components/Button.vue'
+
+export default {
+  components: {
+    Btn
+  } 
+}
+</script>
+
+<style scoped>
+.centre {
+    text-align: center;
+    z-index: 10;
+}
+p {
+    font-family: Verdana, sans-serif;
+}
+button {
+    margin: 20px auto 0;
+    z-index: 10;
+}
+</style>

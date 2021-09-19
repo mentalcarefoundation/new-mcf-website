@@ -12,6 +12,7 @@
         outline: none;
         cursor: pointer;
         border: 1px solid transparent;
+        border-radius: 4px;
         background-color: var(--color-blue-dark);
         display: flex;
         align-items: center;
