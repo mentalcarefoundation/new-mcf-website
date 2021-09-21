@@ -71,7 +71,7 @@ img {
   color: var(--color-black-primary);
   font-size: var(--text-36);
   margin: 40px 0;
-  line-height: var(--text-28);
+  line-height: 41px;
 }
 .colored {
   color: var(--color-blue-dark);
