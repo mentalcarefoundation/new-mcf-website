@@ -6,11 +6,11 @@
           <img src="~/assets/img/logo.svg" alt="logo" />
         </NuxtLink>
       </div>
-      <ul class="nav-items" :class="{ open: navMobileVisible }">
-        <li class="nav-item">
+      <ul id="navItems" class="nav-items" :class="{ open: navMobileVisible }">
+        <li class="nav-item" >
           <NuxtLink to="/" class="nav-link">Home</NuxtLink>
         </li>
-        <li class="nav-item dropdown-wrapper" @click="toggleDropdown">
+        <li ref="dropdown" class="nav-item dropdown-wrapper" @click="toggleDropdown">
           Our Solutions
           <div v-show="isDropdownOpen" class="dropdown-container">
             <NuxtLink to="/clubs" class="option">Campus Clubs</NuxtLink>
@@ -41,6 +41,7 @@
         </li>
       </ul>
       <div
+        ref="icon"
         class="hamburger tab-btn"
         :class="{ toggle: navMobileVisible }"
         aria-roledescription="button"
@@ -66,9 +67,11 @@ export default {
   },
   mounted () {
     document.addEventListener('click', this.closeDropdown)
+    document.addEventListener('click', this.closeMenu)
   },
   beforeDestroy () {
     document.removeEventListener('click',this.closeDropdown)
+    document.removeEventListener('click',this.closeMenu)
   },
   methods: {
     toggleMenu() {
@@ -78,8 +81,13 @@ export default {
       this.isDropdownOpen = !this.isDropdownOpen
     },
     closeDropdown (e) {
-      if (!this.$el.contains(e.target)) {
+      if (!this.$refs.dropdown.contains(e.target)) {
         this.isDropdownOpen = false
+      }
+    },
+    closeMenu (e) {
+      if ((!this.$refs.icon.contains(e.target)) && (!this.$refs.dropdown.contains(e.target))) {
+        this.navMobileVisible = false
       }
     }
   }
