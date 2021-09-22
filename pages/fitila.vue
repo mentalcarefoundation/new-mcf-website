@@ -7,7 +7,7 @@
       </template>
       <div class="btn">
         <btn>
-          <a href="https://fitila.mentalcare.life">Join Now</a>
+          <a :href="signupUrl">Join Now</a>
         </btn>  
       </div> 
       <div class="details">
@@ -50,7 +50,7 @@
               <li>Say your mind anonymously.</li>
             </ol>
             <btn>
-              <a href="https://fitila.mentalcare.life">Join Now</a>
+              <a :href="signupUrl">Join Now</a>
             </btn>
           </div>
           <div class="steps">
@@ -62,7 +62,7 @@
               <li>Chat anonymously. </li>
             </ol>
             <btn>
-              <a href="https://fitila.mentalcare.life">Join Now</a>
+              <a :href="signupUrl">Join Now</a>
             </btn>
           </div>
         </div>
@@ -89,7 +89,12 @@ export default {
           url: entry.fields.headerImage.fields.file.url
         }
       })
-    },
+  },
+  data () {
+    return {
+      signupUrl: 'https://fitila.mentalcare.life/signup'
+    }
+  },
   head: {
     title: 'Fitila'
   },
