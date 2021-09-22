@@ -21,7 +21,7 @@
              for people with mental illness.
       </p>
     </div>
-    <section class="second-section pd-60">
+    <section class="second-section ul-section pd-60">
       <div class="wrapper">
         <h2 class="heading section-header">The Problem</h2>
         <div class="summary">
@@ -127,24 +127,16 @@ export default {
 .desc {
   margin-bottom: 60px;
 }
-.desc a, .large-text a, .summary-link {
+.desc a, .summary-link {
   color: var(--color-blue-light);
   font-family: Verdana, sans-serif;
   transition: all 0.5s ease;
 }
-.desc a:hover, .large-text a:hover, .summary-link:hover {
+.desc a:hover, .summary-link:hover {
   color: var(--color-pink-dark);
 }
 .desc a, .summary-link{
   font-weight: 700;
-}
-.large-text {
-  font-size: var(--text-24);
-  font-family: Verdana, sans-serif;
-  z-index: 10;
-}
-.pd-60 {
-  padding: 60px 0;
 }
 .second-section {
   background-color: var(--color-blue-100);
@@ -160,12 +152,6 @@ export default {
   font-family: Verdana, sans-serif;
   font-size: var(--text-18);
   margin-bottom: 25px;
-}
-.second-section ul {
-  margin-left: 25px;
-}
-.second-section li {
-  list-style-type: disc;
 }
 #vision .sub-head, #mission .sub-head {
   margin: 0 0 16px;
@@ -229,9 +215,6 @@ export default {
   }
 }
 @media (max-width: 840px) {
-  .large-text{
-    font-size: var(--text-16);
-  }
   #vision, #mission {
     padding-bottom: 0;
   }

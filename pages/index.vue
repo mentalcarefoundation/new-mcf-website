@@ -33,7 +33,7 @@
         </btn> 
       </div>
     </section>
-    <section class="second-section">
+    <section class="second-section ul-section">
       <div class="wrapper">
         <h2 class="heading section-header colored">Introducing Fitila</h2>
         <h3 class="sub-head">A listening ear to your deepest troubles</h3>
@@ -126,21 +126,12 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-.btn {
-  margin-top: 40px;
-}
 .second-section {
   padding: 60px 0;
   background-color: var(--color-blue-100);
 }
 .second-section .section-header, .third-section .section-header {
   margin-bottom: 40px;
-}
-.second-section ul {
-  margin-left: 25px;
-}
-.second-section li {
-  list-style-type: disc;
 }
 .content {
   margin-bottom: 40px;

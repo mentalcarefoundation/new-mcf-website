@@ -44,6 +44,9 @@ p {
 .content {
     width: 60%;
 }
+.btn {
+  margin-top: 40px;
+}
 .heading span {
     color: var(--color-pink-dark);
 }
@@ -55,9 +58,6 @@ p {
 }
 .page-desc {
    width: 80%;
-}
-.other-section .page-desc {
-   width: 70%;
 }
 .page-desc a {
     color: var(--color-blue-light);

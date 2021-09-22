@@ -55,6 +55,9 @@ img {
 .wrapper {
   margin: 0 95px;
 }
+.pd-60 {
+  padding: 60px 0;
+}
 .section-header {
   font-family: Arial, sans-serif;
   font-size: var(--text-48);
@@ -77,6 +80,25 @@ img {
 .description {
   font-size: var(--text-24);
   color: var(--color-black-secondary);
+}
+.large-text {
+  font-size: var(--text-24);
+  font-family: Verdana, sans-serif;
+  z-index: 10;
+}
+.large-text a {
+  color: var(--color-blue-light);
+  font-family: Verdana, sans-serif;
+  transition: all 0.5s ease;
+}
+.large-text a:hover {
+  color: var(--color-pink-dark);
+}
+.ul-section ul {
+  margin-left: 25px;
+}
+.ul-section li {
+  list-style-type: disc;
 }
 .scroll-group {
   overflow: hidden;
@@ -118,5 +140,8 @@ img {
   }
   .description {
       font-size: var(--text-14);
+  }
+  .large-text{
+    font-size: var(--text-16);
   }
 }
