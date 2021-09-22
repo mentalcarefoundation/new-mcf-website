@@ -141,7 +141,6 @@ a:hover {
 }
 p {
     color: var(--color-white);
-    line-height: 26px;
     font-size: var(--text-16);
     font-family: Verdana, sans-serif;
 }

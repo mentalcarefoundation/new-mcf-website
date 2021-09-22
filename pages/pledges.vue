@@ -69,4 +69,7 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+.last-section .sub-head {
+  line-height: 41px;
+}
 </style>

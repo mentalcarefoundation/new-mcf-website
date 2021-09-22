@@ -3,9 +3,9 @@
     <page-header class="wrapper" heading-text-bottom="24px" :header-img-url="url">
       <template #heading>Mental Care Foundation</template>
       <template #content>
-        <p>This platform offers basic, free, safe, and anonymous support to help you better manage the 
+        <p class="large-text">This platform offers basic, free, safe, and anonymous support to help you better manage the 
         psychological and social difficulties you might be facing.</p>
-        <p class="sub-desc">Our community is here to support you through anything, big or small.</p>
+        <p class="sub-desc large-text">Our community is here to support you through anything, big or small.</p>
       </template>
       <div class="btn">
         <btn>
@@ -177,14 +177,12 @@ export default {
 }
 .volunteer-details h4 {
   font-size: var(--text-24);
-  line-height: 39px;
   font-weight: 700;
   font-family: Arial, sans-serif;
   color: var(--color-blue-dark);
 }
 .volunteer-details .job {
   font-size: var(--text-18);
-  line-height: 29px;
   font-family: Verdana, sans-serif;
   color: var(--color-black-secondary);
   margin-bottom: var(--text-16);

@@ -27,7 +27,6 @@
         font-family: 'Arial', sans-serif;
         font-weight: 700;
         font-size: var(--text-16);
-        line-height: var(--text-24);
         color: var(--color-white);
         width: 100%;
         text-transform: uppercase;
@@ -39,7 +38,6 @@
   }
   a {
     font-size: var(--text-14);
-    line-height: var(--text-18);
   }
 }
 </style>

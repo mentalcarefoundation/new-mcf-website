@@ -2,6 +2,7 @@
 * { 
   margin: 0;
   padding: 0;
+  line-height: 161.9%;
 }
 /*global settings*/
 :root {
@@ -32,7 +33,6 @@ body {
     background: var(--color-white);
     letter-spacing: 0.5px;
     box-sizing: border-box;
-    line-height: 26px;
   }
 li {
   list-style: none;
@@ -65,13 +65,11 @@ img {
   color: var(--color-black-primary);
   font-size: var(--text-48);
   margin-bottom: var(--text-16);
-  line-height: 55px;
 }
 .sub-head {
   color: var(--color-black-primary);
   font-size: var(--text-36);
   margin: 40px 0;
-  line-height: 41px;
 }
 .colored {
   color: var(--color-blue-dark);
@@ -79,7 +77,6 @@ img {
 .description {
   font-size: var(--text-24);
   color: var(--color-black-secondary);
-  line-height: 38px;
 }
 .scroll-group {
   overflow: hidden;

@@ -49,17 +49,26 @@ p {
 }
 .sub-heading {
     text-transform: uppercase;
-    line-height: 38px;
     font-size: var(--text-24);
     color: var(--color-blue-dark);
     margin-bottom: 16px;
 }
 .page-desc {
+   width: 80%;
+}
+.other-section .page-desc {
    width: 70%;
+}
+.page-desc a {
+    color: var(--color-blue-light);
+    font-weight: 700;
+    font-family: Verdana, sans-serif;
+}
+.sub-page .large-text {
+    font-size: var(--text-24);
 }
 .sub-page p {
     font-size: var(--text-18);
-    line-height: var(--text-28);
 }
 .sub-desc {
     margin-top: 20px;
@@ -101,6 +110,9 @@ p {
     }
     .sub-heading {
         font-size: var(--text-18);
+    }
+    .sub-page .large-text {
+        font-size: var(--text-16);
     }
     .sub-page p {
         font-size: var(--text-14);

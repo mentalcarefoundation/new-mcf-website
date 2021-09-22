@@ -93,13 +93,11 @@ export default {
 }
 .whatsapp .subtext {
   font-size: var(--text-24);
-  line-height: 160%;
   color: var(--color-blue-dark);
 }
 .contact p {
   font-family: Arial, sans-serif;
   font-size: var(--text-24);
-  line-height: 160%;
   margin-bottom: 5px;
   color: var(--color-black-primary);
 }
@@ -112,14 +110,12 @@ export default {
 }
 .phone .number {
   font-size: 32px;
-  line-height: 160%;
   color: var(--color-blue-dark);
   margin-bottom: 5px;
   font-family: Arial, sans-serif;
 }
 .phone .days {
   font-size: var(--text-18);
-  line-height: 160%;
   color: var(--color-black-primary);
 }
 .scroll-container {
@@ -160,7 +156,6 @@ export default {
 }
 .testimonial-details h4 {
   font-size: var(--text-24);
-  line-height: 160%;
   font-weight: 700;
   font-family: Arial, sans-serif;
   color: var(--color-blue-dark);

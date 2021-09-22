@@ -107,7 +107,6 @@ export default {
   .label {
     font-family: Verdana, sans-serif;
     font-size: var(--text-18);
-    line-height: var(--text-28);
     color: var(--color-black-secondary);
     margin-bottom: 5px;
   }
@@ -136,7 +135,6 @@ export default {
     background-color: var(--color-blue-100);
     font-family: Verdana, sans-serif;
     font-size: var(--text-16);
-    line-height: var(--text-24);
     color: var(--color-black-primary);    
   }
   .select-header:focus {

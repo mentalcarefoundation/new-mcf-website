@@ -122,7 +122,6 @@ nav {
 .nav-link {
     font-weight: 700;
     font-size: var(--text-18);
-    line-height: var(--text-24);
     padding-bottom: 5px;
     transition: all 0.5s ease;
     color: var(--color-black-primary);
@@ -134,7 +133,6 @@ nav {
     position: relative;
     font-weight: 700;
     font-size: var(--text-18);
-    line-height: var(--text-24);
     font-family: Arial, sans-serif;
     cursor: pointer;
 }

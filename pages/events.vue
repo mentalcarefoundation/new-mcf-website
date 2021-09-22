@@ -3,7 +3,7 @@
     <page-header class="wrapper" :header-img-url="url">
       <template #heading>Awareness Events</template>
       <template #content>
-        <p>We organize mental health national events by partnering with individuals, private organizations, 
+        <p class="large-text">We organize mental health national events by partnering with individuals, private organizations, 
             and public bodies. We particularly focus on giving hope and support to the vulnerable, while creating
              an avenue to discuss critical issues that affect the mental health of Nigerians. We are committed to 
              spreading relevant information and building a stigma-free society.</p>
@@ -112,7 +112,7 @@ export default {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  max-height: 39px;
+  max-height: 36px;
 
 }
 .content button {
