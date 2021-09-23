@@ -1,9 +1,16 @@
 <template>
-  <button>
+  <button :class="{colorless: colorless}">
     <slot></slot>
   </button>
 </template>
 
+<script>
+export default {
+  props: {
+    colorless: Boolean
+  }
+}
+</script>
 
 <style scoped>
     button {
@@ -19,11 +26,17 @@
         justify-content: center;
         transition: all .2s ease-in;
     }
+    .colorless {
+      width: 100px;
+      height: 40px;
+      border: 2px solid var(--color-white);
+      background-color: transparent;
+    }
     button:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(122, 122, 122, 0.2);
     }
-    a {
+    a, span {
         font-family: 'Arial', sans-serif;
         font-weight: 700;
         font-size: var(--text-16);
@@ -36,7 +49,7 @@
   button {
     width: 100%;
   }
-  a {
+  a, span {
     font-size: var(--text-14);
   }
 }

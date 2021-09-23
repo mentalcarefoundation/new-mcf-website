@@ -59,14 +59,6 @@ export default {
         }
       })
     },
-  // asyncData () {
-  //     return client.getEntry('2oru5DrMOUPdJfYxBbm269')
-  //       .then((entry) => {
-  //       return {
-  //         url: entry.fields.headerImage.fields.file.url
-  //       }
-  //     })
-  //   },
   head: {
     title: 'Events'
   },
