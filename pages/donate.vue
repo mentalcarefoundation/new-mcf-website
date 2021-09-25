@@ -7,7 +7,7 @@
           resources for people living with mental disorders, change the narrative and create a safe haven for all.
         </span>
         <btn class="heading-btn">
-          <a href="https://forms.gle/yobYeHp92JXn7xJz5">Donate now</a>
+          <a href="https://forms.gle/yobYeHp92JXn7xJz5" target="_blank">Donate now</a>
         </btn>
     </div>
     <div class="wrapper page-heading">

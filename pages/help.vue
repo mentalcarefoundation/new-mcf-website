@@ -8,7 +8,7 @@
       <div class="help-section whatsapp page-desc">
         <h3 class="sub-head">
           Start a chat with JO on WhatsApp
-          <a :href="helpDetails.whatsappLink">here</a>.
+          <a :href="helpDetails.whatsappLink" target="_blank">here</a>.
         </h3>
         <p class="subtext">({{helpDetails.whatsappHours}})</p>
       </div>

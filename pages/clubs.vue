@@ -18,7 +18,7 @@
         <div class="select-group">
           <div class="select-box">
             <div class="custom-select">
-              <div v-if="!selectedOption" class="select-header" @click="toggleSelect">Select a campus:</div>
+              <div v-if="!selectedOption" ref="select" class="select-header" @click="toggleSelect">Select a campus:</div>
               <div v-else class="select-header" @click="toggleSelect">{{selectedOption}}</div>
               <div v-show="isOpen" >
                   <ul class="options-list">
@@ -30,7 +30,7 @@
             </div>
           </div>
           <btn>
-            <a :href="clubUrl">Join</a>
+            <a :href="clubUrl" target="_blank">Join</a>
           </btn>
         </div>
       </div>
@@ -38,7 +38,7 @@
     <section class="last-section wrapper">
       <h2 class="sub-head">No club in your school?</h2>
       <btn>
-        <a href="https://bit.ly/2MON6UU">start a campus club</a>
+        <a href="https://bit.ly/2MON6UU" target="_blank">start a campus club</a>
       </btn>
     </section>
   </div>
@@ -92,7 +92,7 @@ export default {
       this.clubUrl = option.email
     },
     closeSelect (e) {
-      if (!this.$el.contains(e.target)) {
+      if (!this.$refs.select.contains(e.target)) {
         this.isOpen = false
       }
     }

@@ -33,15 +33,19 @@
         </div>
         <ul class="summary">
           <li class="large-text">Close to 800 000 people die due to suicide every year, which is 
-            <a href="https://www.who.int/mental_health/prevention/suicide/suicideprevent/en/">one person every 40 seconds</a>.
+            <a href="https://www.who.int/mental_health/prevention/suicide/suicideprevent/en/" target="_blank">
+              one person every 40 seconds
+            </a>.
           </li>
           <li class="large-text">There are indications that for each adult who died by suicide there may have been
-            <a href="https://www.who.int/mental_health/prevention/suicide/suicideprevent/en/">
+            <a href="https://www.who.int/mental_health/prevention/suicide/suicideprevent/en/" target="_blank">
              more than 20 others attempting suicide
             </a>.
           </li>
           <li class="large-text">About 
-            <a href="http://saharareporters.com/2018/11/13/30-nigerians-suffer-mental-illness-%E2%80%93-fg">30% of Nigerians suffer mental illness</a>.
+            <a href="http://saharareporters.com/2018/11/13/30-nigerians-suffer-mental-illness-%E2%80%93-fg" target="_blank">
+            30% of Nigerians suffer mental illness
+            </a>.
             </li>
         </ul>
         <div class="summary">
@@ -80,7 +84,7 @@
           </div>
           <div class="name">{{member.fields.name}}</div>
           <div class="position">{{member.fields.position}}</div>
-          <a :href="member.fields.bioUrl" class="link">Read Bio</a>
+          <a :href="member.fields.bioUrl" class="link" target="_blank">Read Bio</a>
         </div>
       </div>
     </section>

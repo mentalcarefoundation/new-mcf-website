@@ -19,7 +19,7 @@
           <div class="content">
             <h4 class="title">{{event.fields.title}}</h4>
             <btn>
-              <a :href="event.fields.link">register</a>
+              <a :href="event.fields.link" target="_blank">register</a>
             </btn>
           </div>
         </div>
@@ -28,7 +28,7 @@
     <section class="last-section wrapper">
       <h2 class="heading section-header">Want to Organize an Event?</h2>
       <btn>
-        <a href="https://bit.ly/2SM2aGD">create one</a>
+        <a href="https://bit.ly/2SM2aGD" target="_blank">create one</a>
       </btn>
     </section>
   </div>

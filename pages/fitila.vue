@@ -7,7 +7,7 @@
       </template>
       <div class="btn">
         <btn>
-          <a :href="signupUrl">Join Now</a>
+          <a :href="signupUrl" target="_blank">Join Now</a>
         </btn>  
       </div> 
       <div class="details">
@@ -50,7 +50,7 @@
               <li>Say your mind anonymously.</li>
             </ol>
             <btn>
-              <a :href="signupUrl">Join Now</a>
+              <a :href="signupUrl" target="_blank">Join Now</a>
             </btn>
           </div>
           <div class="steps">
@@ -62,7 +62,7 @@
               <li>Chat anonymously. </li>
             </ol>
             <btn>
-              <a :href="signupUrl">Join Now</a>
+              <a :href="signupUrl" target="_blank">Join Now</a>
             </btn>
           </div>
         </div>
