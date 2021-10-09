@@ -80,7 +80,8 @@
       <div class="members">
         <div v-for="member in members" :key="member.fields.memberId" class="member">
           <div class="img-box">
-            <img :src="member.fields.image.fields.file.url" alt="member-image">
+            <img v-if="member.fields.image" :src="member.fields.image.fields.file.url" alt="member-image">
+            <img v-else src="~/assets/img/anon.jpg" alt="no-image">
           </div>
           <div class="name">{{member.fields.name}}</div>
           <div class="position">{{member.fields.position}}</div>

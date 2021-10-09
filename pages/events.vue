@@ -14,7 +14,8 @@
       <div class="events-box">
         <div v-for="event in events" :key="event.fields.id" class="event-group">
           <div class="img-box">
-            <img :src="event.fields.banner.fields.file.url" alt="event-image">
+            <img v-if="event.fields.banner" :src="event.fields.banner.fields.file.url" alt="event-image">
+            <img v-else src="~/assets/img/anon.jpg" alt="no-image">
           </div>
           <div class="content">
             <h4 class="title">{{event.fields.title}}</h4>

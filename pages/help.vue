@@ -33,7 +33,8 @@
         <div class="scroll-container">
           <div v-for="testimonial in testimonials" :key="testimonial.fields.testimonialId" class="testimonial-box">
             <div class="testimonial-img-box">
-              <img :src="testimonial.fields.image.fields.file.url" alt="testimonial-img">
+              <img v-if="testimonial.fields.image" :src="testimonial.fields.image.fields.file.url" alt="testimonial-img">
+              <img v-else src="~/assets/img/anon.jpg" alt="no-image">
             </div>  
             <div class="testimonial-details">
               <h4>{{testimonial.fields.name}}</h4>
@@ -58,7 +59,7 @@ export default {
   },
   asyncData () {
       return Promise.all([
-        client.getEntry('71tkM2hK8fDs7ki7p9LXnA'),
+        client.getEntry('4jIwYrvzHwCg5mbwF8h1qK'),
         client.getEntry('lcDeQdXARFIjTlahYRqyh'),
         client.getEntries({
           'content_type': 'testimonial'

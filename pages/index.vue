@@ -61,7 +61,8 @@
         <div class="scroll-container">
           <div v-for="volunteer in volunteers" :key="volunteer.fields.volunteerId" class="volunteer-box">
             <div class="volunteer-img-box">
-              <img :src="volunteer.fields.image.fields.file.url" alt="volunteer-img">
+              <img v-if="volunteer.fields.image" :src="volunteer.fields.image.fields.file.url" alt="volunteer-img">
+              <img v-else src="~/assets/img/anon.jpg" alt="no-image">
             </div>  
             <div class="volunteer-details">
               <h4>{{volunteer.fields.name}}</h4>

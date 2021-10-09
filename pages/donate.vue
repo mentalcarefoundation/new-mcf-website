@@ -15,7 +15,8 @@
         <div class="donate-group">
           <div v-for="donation in donations" :key="donation.fields.id" class="donate">
             <div class="img-box">
-              <img :src="donation.fields.icon.fields.file.url" alt="icon">
+              <img v-if="donation.fields.icon" :src="donation.fields.icon.fields.file.url" alt="icon">
+              <img v-else src="~/assets/img/404.svg" alt="no-icon">
             </div>
             <div class="value">{{donation.fields.value}}</div>
             <div class="details">{{donation.fields.desc}}</div>
