@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <page-header class="wrapper first-section" :header-img-url="url" heading-text-bottom="8px">
-      <template #heading>Introducing Fitila</template>
+      <template #heading>{{details.firstSectionHeading}}</template>
       <template #content>
-        <p>Nigeria’s premier on-demand emotional support platform.</p>
+        <p>{{details.firstSectionContent}}</p>
       </template>
       <div class="btn">
         <btn>
@@ -11,55 +11,60 @@
         </btn>  
       </div> 
       <div class="details">
-        <h3 class="sub-head">A listening ear to your deepest troubles</h3>
+        <h3 class="sub-head">{{details.secondSectionHeading}}</h3>
         <p class="large-text">
-          Fitila connects you with anonymous listeners who truly understand and are ready to give free emotional
-           support until you are back on your feet.
+          {{firstCut}}
         </p>
       </div>
     </page-header>
     <section class="wrapper ul-section">
-      <div class="large-text">
-          Fitila connects you with anonymous listeners who truly understand and are ready to give free 
-          emotional support until you are back on your feet.
-        </div>
-        <div class="large-text">
-          Do you need someone to talk to in a language that gives you the freedom to express yourself?
-        </div>
+      <p 
+        v-for="(section, index) in (details.secondSectionContent1.split('<br>').slice(1, details.secondSectionContent1.length))"
+        :key="`2nd-section-1${index}`" 
+        class="large-text"
+      >
+          {{section}}
+      </p>
+        
         <ul class="large-text">
-          <li>FITILA trained volunteer listeners are available 24 /7 to give emotional support over online chat.</li>
-          <li>Our trained listeners don’t judge, they don't try to solve problems, neither do they tell you want to do. 
-            They just listen and give you a safe space you need to say your mind.</li>
-          <li>Your chat is anonymous and entirely free.</li>
+          <li v-for="(section, index) in details.secondSectionHighlight.split('<br>')" :key="`second-section-list${index}`">
+            {{section}}
+          </li>
         </ul>
-        <div class="large-text">
-          Read Our Terms and Conditions <NuxtLink to="/terms">here</NuxtLink>.
-        </div>
+        <p class="large-text">
+          {{secondCut}} <NuxtLink to="/terms"> here</NuxtLink>.
+        </p>
+        <p 
+          v-for="(section, index) in details.secondSectionContent2.split('<br>').slice(1, details.secondSectionContent2.length)" 
+          :key="`2nd-section-2${index}`" 
+          class="large-text"
+        >
+            {{section}}
+        </p>
     </section>
     <section class="wrapper pd-60 last-section">
-        <h2 class="heading section-header">How It Works</h2>
+        <h2 class="heading section-header">{{details.thirdSectionHeading}}</h2>
         <p class="heading-desc large-text">
-          Very simple! All you need is internet connection to get started. 
+          {{details.thirdSectionContent}}
         </p>
         <div class="steps-group">
           <div class="steps">
-            <h2 class="sub-head">Help Seeker</h2>
+            <h2 class="sub-head">{{details.fourthSectionHeading}}</h2>
             <ol class="large-text">
-              <li>Sign up.</li>
-              <li>Connect with a listener. </li>
-              <li>Say your mind anonymously.</li>
+              <li v-for="(section, index) in details.fourthSectionContent.split('<br>')" :key="`fourth-section-list${index}`">
+                {{section}}
+              </li>
             </ol>
             <btn>
               <a :href="signupUrl" target="_blank">Join Now</a>
             </btn>
           </div>
           <div class="steps">
-            <h2 class="sub-head">Volunteer Listener</h2>
+            <h2 class="sub-head">{{details.fifthSectionHeading}}</h2>
             <ol class="large-text">
-              <li>Sign up. </li>
-              <li>Take active listening training and test.</li>
-              <li>Connect with a member.</li>
-              <li>Chat anonymously. </li>
+              <li v-for="(section, index) in details.fifthSectionContent.split('<br>')" :key="`fifth-section-list${index}`">
+                {{section}}
+              </li>
             </ol>
             <btn>
               <a :href="signupUrl" target="_blank">Join Now</a>
@@ -83,10 +88,13 @@ export default {
     Btn
   },
   asyncData () {
-      return client.getEntry('7Ixott1du6XLnHuQ6Easd9')
-        .then((entry) => {
+    return Promise.all([
+        client.getEntry('7Ixott1du6XLnHuQ6Easd9'),
+        client.getEntry('2WvyHteyDBxtWxhHI2OLae'),
+      ]).then(([entry, details]) => {
         return {
-          url: entry.fields.headerImage.fields.file.url
+          url: entry.fields.headerImage.fields.file.url,
+          details: details.fields
         }
       })
   },
@@ -98,6 +106,14 @@ export default {
   head: {
     title: 'Fitila'
   },
+  computed: {
+    firstCut() {
+      return this.details.secondSectionContent1.split('<br>')[0]
+    },
+    secondCut() {
+      return this.details.secondSectionContent2.split('<br>')[0]
+    }
+  }
 }
 </script>
 
