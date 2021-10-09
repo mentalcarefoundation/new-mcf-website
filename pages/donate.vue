@@ -18,7 +18,16 @@
               <img v-if="donation.fields.icon" :src="donation.fields.icon.fields.file.url" alt="icon">
               <img v-else src="~/assets/img/404.svg" alt="no-icon">
             </div>
-            <div class="value">{{donation.fields.value}}</div>
+            <!-- for anything not beginning with numbers -->
+            <div v-if="isNaN(parseInt(donation.fields.value.slice(0, 1)))" class="value" > 
+              {{donation.fields.value.slice(0, 1)}}
+              <animate-number :number="donation.fields.value.replace(/\D/g,'')"></animate-number>
+            </div>
+            <!-- for anything not ending with number  -->
+            <div v-else class="value" >
+              <animate-number :number="donation.fields.value.replace(/\D/g,'')"></animate-number>
+              {{donation.fields.value.slice(-1)}}
+            </div>
             <div class="details">{{donation.fields.desc}}</div>
           </div>
         </div>
@@ -28,13 +37,15 @@
 
 <script>
 import Btn from '~/components/Button.vue'
+import AnimateNumber from '~/components/AnimateNumber.vue'
 import {createClient} from '~/plugins/contentful.js'
 
 const client = createClient()
 
 export default {
   components: {
-    Btn
+    Btn,
+    AnimateNumber
   },
   asyncData () {
       return client.getEntries({

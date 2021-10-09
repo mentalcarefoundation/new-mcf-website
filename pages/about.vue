@@ -85,7 +85,7 @@
           </div>
           <div class="name">{{member.fields.name}}</div>
           <div class="position">{{member.fields.position}}</div>
-          <a :href="member.fields.bioUrl" class="link" target="_blank">Read Bio</a>
+          <a v-if="member.fields.bioUrl" :href="member.fields.bioUrl" class="link" target="_blank">Read Bio</a>
         </div>
       </div>
     </section>
