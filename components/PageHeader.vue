@@ -4,6 +4,12 @@
             <h1 class="heading" :style="{marginBottom: headingTextBottom}">
                 <slot name="heading"></slot>
             </h1>
+            <!-- mobile only -->
+            <div class="mobile-wrapper">
+                <div class="round-img-box-mobile">
+                    <img :src="headerImgUrl" alt="header-img" >
+                </div>
+            </div>
             <h3 v-if="subHeading" class="sub-heading">lend your voice</h3>
             <div class="description page-desc sub-page">
                 <slot name="content"></slot>
@@ -86,6 +92,11 @@ p {
     height: 100%;
     border-radius: 50%;
 }
+.round-img-box-mobile {
+    display: none;
+}.mobile-wrapper {
+    margin: 0 -30px;
+}
 
 @media (max-width: 1200px) {
     .page-desc {
@@ -119,6 +130,16 @@ p {
     }
     .round-img-box {
         display: none;
+    }
+    .round-img-box-mobile {
+        display: block;
+        width: 100%;
+        height: 400px;
+        margin-bottom: 20px;
+    }
+    .round-img-box-mobile img {
+        width: 100%;
+        height: 100%;
     }
 }
 </style>
