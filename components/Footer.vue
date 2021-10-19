@@ -25,25 +25,25 @@
                 <div class="icon">
                     <img src="~/assets/img/twitter.svg"/>
                 </div>
-                <p>Twitter: {{result.twitter}}</p>
+                <p>Twitter:<a :href="result.twitter"> @mcarefoundation</a></p>
             </div>
             <div class="social-group">
                 <div class="icon">
                     <img src="~/assets/img/facebook.svg"/>
                 </div>
-                <p>Facebook: {{result.facebook}}</p>
+                <p>Facebook:<a :href="result.facebook"> @mcarefoundation</a></p>
             </div>
             <div class="social-group">
                 <div class="icon">
                     <img src="~/assets/img/instagram.svg"/>
                 </div>
-                <p>Instagram: {{result.instagram}}</p>
+                <p>Instagram:<a :href="result.instagram"> @mcarefoundation</a></p>
             </div>
             <div class="social-group">
                 <div class="icon">
                     <img src="~/assets/img/linkedin.svg"/>
                 </div>
-                <p>LinkedIn: {{result.linkedin}}</p>
+                <p>LinkedIn:<a :href="result.linkedin"> Mental Care Foundation</a></p>
             </div>
         </div>
       </div>
@@ -124,6 +124,7 @@ a:hover {
 .social-group {
     display: flex;
     margin-bottom: 16px;
+    z-index: 10;
 }
 .icon {
     width: 24px;

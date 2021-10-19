@@ -13,25 +13,23 @@
         <li ref="dropdown" class="nav-item dropdown-wrapper" @click="toggleDropdown">
           Our Solutions
           <div v-show="isDropdownOpen" class="dropdown-container">
+            <NuxtLink to="/help" class="option">JO - Helpline</NuxtLink>
+            <NuxtLink to="/fitila" class="option">Fitila</NuxtLink>
             <NuxtLink to="/clubs" class="option">Campus Clubs</NuxtLink>
             <NuxtLink to="/events" class="option">Events</NuxtLink>
             <NuxtLink to="/pledges" class="option">Be A Voice</NuxtLink>
             </div>
         </li>
         <div v-show="isDropdownOpen" class="dropdown-container-mobile">
+            <NuxtLink to="/help" class="option">JO - Helpline</NuxtLink>
+            <NuxtLink to="/fitila" class="option">Fitila</NuxtLink>
             <NuxtLink to="/clubs" class="option">Campus Clubs</NuxtLink>
             <NuxtLink to="/events" class="option">Events</NuxtLink>
             <NuxtLink to="/pledges" class="option">Be A Voice</NuxtLink>
         </div>
 
         <li class="nav-item">
-          <NuxtLink to="/fitila" class="nav-link">Join Fitila</NuxtLink>
-        </li>
-        <li class="nav-item">
           <NuxtLink to="/donate" class="nav-link">Donate</NuxtLink>
-        </li>
-        <li class="nav-item">
-          <NuxtLink to="/help" class="nav-link">Get Help</NuxtLink>
         </li>
         <li class="nav-item">
           <NuxtLink to="/about" class="nav-link">About Us</NuxtLink>
@@ -254,7 +252,7 @@ nav {
         box-shadow: none;
     }
     .option {
-        padding: 10px 0;
+        padding: 5px 0;
     }
     .hamburger {
         display: block;

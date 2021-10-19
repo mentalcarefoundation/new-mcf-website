@@ -3,7 +3,7 @@
     <page-header class="wrapper" heading-text-bottom="24px" :header-img-url="url">
       <template #heading>Mental Care Foundation</template>
       <template #content>
-        <p class="large-text">This platform offers basic, free, safe, and anonymous support to help you better manage the 
+        <p class="large-text">Mental Care Foundation offers basic, free, safe, and anonymous support to help you better manage the 
         psychological and social difficulties you might be facing.</p>
         <p class="sub-desc large-text">Our community is here to support you through anything, big or small.</p>
       </template>
@@ -46,7 +46,7 @@
         </div>
         <ul class="description content">
           <li>FITILA trained volunteer listeners are available 24 /7 to give emotional support over online chat.</li>
-          <li>Our trained listeners don’t judge, they don't try to solve problems, neither do they tell you want to do. 
+          <li>Our trained listeners don’t judge, they don't try to solve problems, neither do they tell you what to do. 
             They just listen and give you a safe space you need to say your mind.</li>
           <li>Your chat is anonymous and entirely free.</li>
         </ul>
@@ -68,7 +68,8 @@
               <h4>{{volunteer.fields.name}}</h4>
               <p class="job">{{volunteer.fields.job}}</p>
               <div class="bio">"{{volunteer.fields.bio}}"</div>
-            </div>   
+            </div>
+            <img class="volunteer-icon" src="~/assets/img/arrow.svg" alt="arrow">   
           </div>
         </div>
       </div>
@@ -148,6 +149,7 @@ export default {
   flex-shrink: 0;
   scroll-snap-align: start;
   z-index: 10;
+  position: relative;
 }
 .volunteer-box:last-child {
   padding-right: 0
@@ -191,6 +193,9 @@ export default {
   -webkit-line-clamp: 2;
   max-height: 58px;
 }
+.volunteer-icon {
+  display: none;
+}
 .last-section {
   padding-top: 60px;
 }
@@ -223,8 +228,8 @@ export default {
     margin-right: 20px;
   }
   .volunteer-img-box img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
   }
   .volunteer-box {
@@ -241,6 +246,18 @@ export default {
   .volunteer-details .bio {
     font-size: var(--text-14);
     font-weight: 700;
+  }
+  .volunteer-icon {
+    display: inline-block;
+    transform: rotate(90deg);
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    position: absolute;
+    right: 5%;
+  }
+  .volunteer-box:last-child .volunteer-icon {
+    display: none;
   }
   .last-section {
     padding-top: 0;
