@@ -102,6 +102,7 @@ nav {
     padding: 0 95px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo-wrapper {
@@ -203,17 +204,16 @@ nav {
 
 @media (max-width:1024px) {
     nav {
-        padding: 0 5%;
-        justify-content: space-between;
+      padding: 0 5%;
     }
     .logo-wrapper {
-        margin-right: 0;
+      margin-right: 0;
     }
 }
 
 @media (max-width:840px) {
     nav {
-        padding: 10px 30px;
+      padding: 10px 30px;
     }
     .nav-items {      
         position: fixed;

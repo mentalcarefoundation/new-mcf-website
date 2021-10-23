@@ -23,6 +23,9 @@
       </div>
       <div class="btn-group">
         <btn>
+          <NuxtLink to="/help">JO - Helpline</NuxtLink>
+        </btn> 
+        <btn>
           <NuxtLink to="/fitila">fitila</NuxtLink>
         </btn> 
         <btn>
@@ -125,9 +128,13 @@ export default {
 .btn-group {
   margin-top: 22px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
+  .btn-group button {
+    margin-bottom: 30px;
+  }
 .second-section {
   padding: 60px 0;
   background-color: var(--color-blue-100);
@@ -211,9 +218,6 @@ export default {
   .btn-group {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .btn-group button {
-    margin-bottom: 30px;
   }
   .content {
     margin-bottom: 20px;
