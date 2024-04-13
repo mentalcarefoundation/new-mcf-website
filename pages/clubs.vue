@@ -57,21 +57,37 @@ export default {
     Btn
   },
   asyncData ({$axios}) {
-      return Promise.all([
-        $axios.$get('https://mcfapi.herokuapp.com/api/v1/admin/list?type=campus_club'),
-        client.getEntry('24ja3DvYPxsse8kHytGXmY')
-      ])
-      .then(([res, entry]) => {
+      return client.getEntry('24ja3DvYPxsse8kHytGXmY')
+      .then((entry) => {
         return {
-          clubs: res.data,
           url: entry.fields.headerImage.fields.file.url
         }
       })
+      // return Promise.all([
+      //   $axios.$get('https://mcfapi.herokuapp.com/api/v1/admin/list?type=campus_club'),
+      //   client.getEntry('24ja3DvYPxsse8kHytGXmY')
+      // ])
+      // .then(([res, entry]) => {
+      //   return {
+      //     clubs: res.data,
+      //     url: entry.fields.headerImage.fields.file.url
+      //   }
+      // })
     },
   data: () => ({
     isOpen: false,
     selectedOption: null,
-    clubUrl: ""
+    clubUrl: "",
+    clubs: [
+      {
+        school: "Obafemi Awolowo University",
+        email: "mailto:hello@mentalcare.life?subject=Interest%20in%20joining%20MCF%20Campus%20Club%20-%20OAU%20Chapter"
+      },
+      {
+        school: "University of Lagos",
+        email: "mailto:hello@mentalcare.life?subject=Interest%20in%20joining%20MCF%20Campus%20Club%20-%20UNILAG%20Chapter"
+      }
+    ]
   }),
   head: {
     title: 'Campus Clubs'
