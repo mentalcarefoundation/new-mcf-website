@@ -1,6 +1,12 @@
-# mcf-rebuild
+# Mental Care Foundation Website
 
-## Build Setup
+## About
+
+The rebranded website for Mental Care Foundation. Available at https://mentalcare.life/.
+
+Built with Nuxt and Contentful. Deployed to Netlify.
+
+### Dev setup
 
 ```bash
 # install dependencies
